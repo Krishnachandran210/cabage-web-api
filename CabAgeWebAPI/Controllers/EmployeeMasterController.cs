@@ -43,7 +43,24 @@ namespace CabAgeWebAPI.Controllers
         [POST("employee/create")]
         public void Post([FromBody] EmployeeMasterBusinessEntity employeeMasterBusinessEntity)
         {
-            employeeMasterService.CreateEmployee(employeeMasterBusinessEntity);
+            employeeMasterBusinessEntity = null;
+
+            try
+            {
+                employeeMasterService.CreateEmployee(employeeMasterBusinessEntity);
+                Request.CreateResponse(HttpStatusCode.OK);
+
+            }
+            catch(Exception ex)
+            {
+                var message 
+                    = new System.Web.Http.HttpError(ex.Message) { { "ErrorCode", 500 } };
+
+                throw new
+                   HttpResponseException(Request.CreateErrorResponse
+                   (HttpStatusCode.InternalServerError, message));
+            }
+            
         }
 
 

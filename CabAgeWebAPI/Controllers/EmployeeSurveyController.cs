@@ -49,7 +49,19 @@ namespace CabAgeWebAPI.Controllers
         [POST("employeesurvey/create")]
         public void Post([FromBody] IList<EmployeeSurveyBusinessEntity> employeeSurveyBusinessEntity)
         {
-            employeeSurveyService.CreateEmployeeSurvey(employeeSurveyBusinessEntity);
+            try
+            {
+                employeeSurveyService.CreateEmployeeSurvey(employeeSurveyBusinessEntity);
+            }
+            catch (Exception ex)
+            {
+                var message
+                    = new System.Web.Http.HttpError(ex.Message) { { "ErrorCode", 500 } };
+
+                throw new
+                   HttpResponseException(Request.CreateErrorResponse
+                   (HttpStatusCode.InternalServerError, message));
+            }
         }
 
 
