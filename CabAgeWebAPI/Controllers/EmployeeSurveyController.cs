@@ -52,11 +52,12 @@ namespace CabAgeWebAPI.Controllers
             try
             {
                 employeeSurveyService.CreateEmployeeSurvey(employeeSurveyBusinessEntity);
+                Request.CreateResponse(HttpStatusCode.OK);
             }
-            catch (Exception ex)
+            catch
             {
                 var message
-                    = new System.Web.Http.HttpError(ex.Message) { { "ErrorCode", 500 } };
+                    = new System.Web.Http.HttpError("OOPS !! Something went wrong . Please contract krishna.chandran@socgen.com") { { "ErrorCode", 500 } };
 
                 throw new
                    HttpResponseException(Request.CreateErrorResponse

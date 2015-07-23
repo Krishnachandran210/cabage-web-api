@@ -4,36 +4,38 @@
     <EntitySetMapping Name="CategoryMasters">
       <EntityTypeMapping TypeName="CabAgeModel.CategoryMaster">
         <MappingFragment StoreEntitySet="CategoryMaster">
-          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
-          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EmployeeLocations">
       <EntityTypeMapping TypeName="CabAgeModel.EmployeeLocation">
         <MappingFragment StoreEntitySet="EmployeeLocation">
-          <ScalarProperty Name="EmployeeGeoLocation" ColumnName="EmployeeGeoLocation" />
-          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-          <ScalarProperty Name="EmployeeLocationID" ColumnName="EmployeeLocationID" />
+          <ScalarProperty Name="GeoLocation" ColumnName="GeoLocation" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EmployeeMasters">
       <EntityTypeMapping TypeName="CabAgeModel.EmployeeMaster">
         <MappingFragment StoreEntitySet="EmployeeMaster">
-          <ScalarProperty Name="EmployeeMobileNumber" ColumnName="EmployeeMobileNumber" />
-          <ScalarProperty Name="EmployeeEmail" ColumnName="EmployeeEmail" />
-          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
-          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="EmployeeSurveyResults">
       <EntityTypeMapping TypeName="CabAgeModel.EmployeeSurveyResult">
         <MappingFragment StoreEntitySet="EmployeeSurveyResults">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
           <ScalarProperty Name="Rating" ColumnName="Rating" />
           <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
           <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeSurveyID" ColumnName="EmployeeSurveyID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

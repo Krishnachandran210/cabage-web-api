@@ -8,9 +8,9 @@ namespace CabAgeBusinessEntities
 {
     public class EmployeeLocationBusinessEntity
     {
-        public int EmployeeLocationID { get; set; }
-        public int EmployeeID { get; set; }
-        public System.Data.Entity.Spatial.DbGeography EmployeeGeoLocation { get; set; }
+        public int LocationID { get; set; }
+        public int ID { get; set; }
+        public System.Data.Entity.Spatial.DbGeography GeoLocation { get; set; }
 
         public virtual EmployeeMasterBusinessEntity EmployeeMaster { get; set; }
 

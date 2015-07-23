@@ -9,9 +9,9 @@ namespace CabAgeBusinessEntities
     public class EmployeeMasterBusinessEntity
     {
 
-        public int EmployeeID { get; set; }
-        public string EmployeeName { get; set; }
-        public string EmployeeEmail { get; set; }
-        public long? EmployeeMobileNumber { get; set; }
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public Nullable<long> Mobile { get; set; }
     }
 }

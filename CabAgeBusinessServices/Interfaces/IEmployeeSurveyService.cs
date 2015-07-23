@@ -12,7 +12,7 @@ namespace CabAgeBusinessServices.Interfaces
 
         IEnumerable<EmployeeSurveyBusinessEntity> GetSurveyResultsOfAnEmployee(int employeeId);
         IEnumerable<EmployeeSurveyBusinessEntity> GetSurveyResultsBasedOnCategory(int categoryId);
-        EmployeeSurveyBusinessEntity GetSurveyResultOfEmployeeBasedOnCategory(int employeeId, int categoryId);
+        IEnumerable<EmployeeSurveyBusinessEntity> GetSurveyResultOfEmployeeBasedOnCategory(int employeeId, int categoryId);
         void CreateEmployeeSurvey(IList<EmployeeSurveyBusinessEntity> employeeSurvey);
         bool HasEmployeeCompletedTheSurvey(int employeeID);
     }

@@ -57,10 +57,10 @@ namespace CabAgeBusinessServices.Services
             {
                 var employee = new EmployeeMaster
                 {
-                    EmployeeEmail = newEmployee.EmployeeEmail,
-                    EmployeeID = newEmployee.EmployeeID,
-                    EmployeeName = newEmployee.EmployeeName,
-                    EmployeeMobileNumber = newEmployee.EmployeeMobileNumber,
+                    Email = newEmployee.Email,
+                    ID = newEmployee.ID,
+                    Name = newEmployee.Name,
+                    Mobile = newEmployee.Mobile,
                    
                 };
                 unitOfWork.EmployeeMasterRepository.Insert(employee);

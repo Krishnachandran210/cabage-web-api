@@ -56,17 +56,18 @@ namespace CabAgeBusinessServices.Services
             return employeeSurveyModel;
         }
 
-        public EmployeeSurveyBusinessEntity GetSurveyResultOfEmployeeBasedOnCategory(int employeeId ,int categoryId)
+        public IEnumerable<EmployeeSurveyBusinessEntity> GetSurveyResultOfEmployeeBasedOnCategory(int employeeId, int categoryId)
         {
 
-            var employeeSurvey = unitOfWork.EmployeeSurveyRepository.GetByID(employeeId, categoryId);
+            var employeeSurvey = unitOfWork.EmployeeSurveyRepository.GetBy(survey => survey.EmployeeID == employeeId 
+                                                                            && survey.CategoryID==categoryId);
 
             if (employeeSurvey == null) return null;
 
             Mapper.CreateMap<EmployeeSurveyResult, EmployeeSurveyBusinessEntity>();
             Mapper.CreateMap<EmployeeMaster, EmployeeMasterBusinessEntity>();
             Mapper.CreateMap<CategoryMaster, CategoryMasterBusinessEnitity>();
-            var employeeSurveyModel = Mapper.Map<EmployeeSurveyResult,EmployeeSurveyBusinessEntity>(employeeSurvey);
+            var employeeSurveyModel = Mapper.Map<IEnumerable<EmployeeSurveyResult>, IEnumerable<EmployeeSurveyBusinessEntity>>(employeeSurvey);
 
             return employeeSurveyModel;
         }
@@ -83,8 +84,8 @@ namespace CabAgeBusinessServices.Services
                     {
                         CategoryID = surveyItem.CategoryID,
                         EmployeeID = surveyItem.EmployeeID,
-                        Rating = surveyItem.Rating
-
+                        Rating = surveyItem.Rating,
+                        CreatedDate = surveyItem.CreatedDate
                     };
                     unitOfWork.EmployeeSurveyRepository.Insert(employeeSurveyResult);
                     unitOfWork.Save();
@@ -114,7 +115,7 @@ namespace CabAgeBusinessServices.Services
                 employeeSurveyCategoryCount = employeeSurveyResults.Count();
             }
 
-            return categoryCount == employeeSurveyCategoryCount;
+            return categoryCount <= employeeSurveyCategoryCount;
         }
 
     }
