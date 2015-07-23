@@ -47,7 +47,7 @@ namespace CabAgeWebAPI.Controllers
         }
 
         [POST("employeesurvey/create")]
-        public void Post([FromBody] IList<EmployeeSurveyBusinessEntity> employeeSurveyBusinessEntity)
+        public void Post([FromBody] IList<EmployeeSurveyModel> employeeSurveyBusinessEntity)
         {
             try
             {

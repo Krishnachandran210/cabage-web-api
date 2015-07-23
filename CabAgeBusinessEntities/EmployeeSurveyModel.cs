@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CabAgeBusinessEntities
 {
-    public class EmployeeSurveyBusinessEntity
+    public class EmployeeSurveyModel
     {
 
         public int EmployeeSurveyID { get; set; }
@@ -15,8 +15,8 @@ namespace CabAgeBusinessEntities
         public int Rating { get; set; }
         public System.DateTime CreatedDate { get; set; }
 
-        public virtual CategoryMasterBusinessEnitity CategoryMaster { get; set; }
-        public virtual EmployeeMasterBusinessEntity EmployeeMaster { get; set; }
+        public virtual CategoryMasterModel CategoryMaster { get; set; }
+        public virtual EmployeeMasterModel EmployeeMaster { get; set; }
 
     }
 }

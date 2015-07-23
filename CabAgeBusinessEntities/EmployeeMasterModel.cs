@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CabAgeBusinessEntities
 {
-    public class EmployeeMasterBusinessEntity
+    public class EmployeeMasterModel
     {
 
         public int ID { get; set; }

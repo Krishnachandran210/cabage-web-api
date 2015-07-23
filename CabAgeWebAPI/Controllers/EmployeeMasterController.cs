@@ -26,7 +26,7 @@ namespace CabAgeWebAPI.Controllers
         {
             var employees = employeeMasterService.GetAllEmployees();
             if (employees == null || !employees.Any()) return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Employees not found");
-            var employeeEntities = employees as List<EmployeeMasterBusinessEntity> ?? employees.ToList();
+            var employeeEntities = employees as List<EmployeeMasterModel> ?? employees.ToList();
             if (employeeEntities.Any())
                 return Request.CreateResponse(HttpStatusCode.OK, employeeEntities);
             return Request.CreateErrorResponse(HttpStatusCode.NotFound, "Employees not found");
@@ -41,7 +41,7 @@ namespace CabAgeWebAPI.Controllers
         }
 
         [POST("employee/create")]
-        public void Post([FromBody] EmployeeMasterBusinessEntity employeeMasterBusinessEntity)
+        public void Post([FromBody] EmployeeMasterModel employeeMasterBusinessEntity)
         {
             employeeMasterBusinessEntity = null;
 

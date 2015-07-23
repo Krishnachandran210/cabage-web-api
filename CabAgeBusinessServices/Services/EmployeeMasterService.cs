@@ -24,33 +24,33 @@ namespace CabAgeBusinessServices.Services
         }
 
 
-        public EmployeeMasterBusinessEntity GetEmployeeById(int id)
+        public EmployeeMasterModel GetEmployeeById(int id)
         {
             var employee = unitOfWork.EmployeeMasterRepository.GetByID(id);
             
 
             if (employee == null) return null;
 
-            Mapper.CreateMap<EmployeeMaster, EmployeeMasterBusinessEntity>();
-            var employeeModel = Mapper.Map<EmployeeMaster, EmployeeMasterBusinessEntity>(employee);
+            Mapper.CreateMap<EmployeeMaster, EmployeeMasterModel>();
+            var employeeModel = Mapper.Map<EmployeeMaster, EmployeeMasterModel>(employee);
 
             return employeeModel;
         }
 
 
-        public IEnumerable<EmployeeMasterBusinessEntity> GetAllEmployees()  
+        public IEnumerable<EmployeeMasterModel> GetAllEmployees()  
         {
             var employees = unitOfWork.EmployeeMasterRepository.GetAll().ToList();
 
             if (!employees.Any()) return null;
 
-            Mapper.CreateMap<EmployeeMaster, EmployeeMasterBusinessEntity>();
-            var employeesModel = Mapper.Map<List<EmployeeMaster>, List<EmployeeMasterBusinessEntity>>(employees);
+            Mapper.CreateMap<EmployeeMaster, EmployeeMasterModel>();
+            var employeesModel = Mapper.Map<List<EmployeeMaster>, List<EmployeeMasterModel>>(employees);
 
             return employeesModel;
         }
 
-        public void CreateEmployee(EmployeeMasterBusinessEntity newEmployee)
+        public void CreateEmployee(EmployeeMasterModel newEmployee)
         {
 
             using (var scope = new TransactionScope())

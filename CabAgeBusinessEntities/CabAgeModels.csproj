@@ -49,10 +49,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategoryMasterBusinessEnitity.cs" />
-    <Compile Include="EmployeeLocationBusinessEntity.cs" />
-    <Compile Include="EmployeeMasterBusinessEntity.cs" />
-    <Compile Include="EmployeeSurveyBusinessEntity.cs" />
+    <Compile Include="CategoryMasterModel.cs" />
+    <Compile Include="EmployeeLocationModel.cs" />
+    <Compile Include="EmployeeMasterModel.cs" />
+    <Compile Include="EmployeeSurveyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
