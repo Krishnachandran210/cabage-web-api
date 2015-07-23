@@ -85,7 +85,7 @@ namespace CabAgeBusinessServices.Services
                         CategoryID = surveyItem.CategoryID,
                         EmployeeID = surveyItem.EmployeeID,
                         Rating = surveyItem.Rating,
-                        CreatedDate = surveyItem.CreatedDate
+                        CreatedDate = DateTime.Now
                     };
                     unitOfWork.EmployeeSurveyRepository.Insert(employeeSurveyResult);
                     unitOfWork.Save();
