@@ -43,8 +43,6 @@ namespace CabAgeWebAPI.Controllers
         [POST("employee/create")]
         public void Post([FromBody] EmployeeMasterModel employeeMasterBusinessEntity)
         {
-            employeeMasterBusinessEntity = null;
-
             try
             {
                 employeeMasterService.CreateEmployee(employeeMasterBusinessEntity);
